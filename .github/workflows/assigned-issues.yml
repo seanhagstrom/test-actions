@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: seanhagstrom/github-project-automation-plus@main
         with:
-          project: Test
+          project: test
           column: In Progress
           repo-token: ${{ secrets.GH_TOKEN }}
