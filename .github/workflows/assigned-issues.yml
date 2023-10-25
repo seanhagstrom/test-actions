@@ -1,0 +1,15 @@
+name: Move assigned issues into In-Progess
+
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanhagstrom/github-project-automation-plus@main
+        with:
+          project: Test
+          column: In Progress
+          repo-token: ${{ secrets.GH_TOKEN }}
