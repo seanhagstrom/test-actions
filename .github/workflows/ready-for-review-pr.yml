@@ -1,0 +1,15 @@
+name: Move PR to In Review
+
+on:
+  pull_request:
+    types: [ready_for_review, review_requested]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanhagstrom/github-project-automation-plus@main
+        with:
+          project: test
+          column: In Review
+          repo-token: ${{ secrets.GH_TOKEN }}
