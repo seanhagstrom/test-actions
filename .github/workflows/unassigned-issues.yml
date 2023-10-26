@@ -1,0 +1,15 @@
+name: Move unassigned issues into Todo
+
+on:
+  issues:
+    types: [unassigned, reopened]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanhagstrom/github-project-automation-plus@main
+        with:
+          project: test
+          column: Todo
+          repo-token: ${{ secrets.GH_TOKEN }}
