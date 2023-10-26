@@ -1,0 +1,15 @@
+name: Move PR to In Progress
+
+on:
+  pull_request:
+    types: [opened, converted_to_draft]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanhagstrom/github-project-automation-plus@main
+        with:
+          project: test
+          column: In Progress
+          repo-token: ${{ secrets.GH_TOKEN }}
