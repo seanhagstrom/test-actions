@@ -1,0 +1,15 @@
+name: Move closed issues into Done
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanhagstrom/github-project-automation-plus@main
+        with:
+          project: test
+          column: Done
+          repo-token: ${{ secrets.GH_TOKEN }}
