@@ -1,8 +1,8 @@
-name: Move unassigned issues into Todo
+name: Move issues into Todo
 
 on:
   issues:
-    types: [unassigned, reopened]
+    types: [opened, unassigned, reopened]
 
 jobs:
   automate-project-columns:
